@@ -11,6 +11,23 @@ struct ContentView: View {
                     Section(header: Text("List \(key)")) {
                         ForEach(listItems[key] ?? [], id: \.self) { item in
                             Text(item)
+                                .contextMenu {
+                                    Button(action: {
+                                        // Edit action
+                                        print("Edit item: \(item)")
+                                    }) {
+                                        Text("編集")
+                                        Image(systemName: "pencil")
+                                    }
+
+                                    Button(action: {
+                                        // Delete action
+                                        listItems[key] = listItems[key]?.filter { $0 != item }
+                                    }) {
+                                        Text("削除")
+                                        Image(systemName: "trash")
+                                    }
+                                }
                         }
                     }
                 }
@@ -28,13 +45,7 @@ struct ContentView: View {
                 Button(action: {
                     let rawDayString = String(textFieldInput.prefix(5))
                     var dayString = ""
-                    
-                    
-                    // 前3文字以内に"/"の有無の確認が必要
-                    // 全体にスペースの有無の確認が必要
-                    
-                    
-                    // dayStringに"5/2", "6/14"などの日付を代入する。
+
                     if let slashIndex = rawDayString.firstIndex(of: "/") {
                         let startIndex = rawDayString.index(slashIndex, offsetBy: -2, limitedBy: rawDayString.startIndex) ?? rawDayString.startIndex
                         let endIndex = rawDayString.index(slashIndex, offsetBy: 3, limitedBy: rawDayString.endIndex) ?? rawDayString.endIndex
@@ -56,5 +67,12 @@ struct ContentView: View {
 
             Spacer()
         }
+    }
+}
+
+
+struct ContentView_Previews: PreviewProvider {
+    static var previews: some View {
+        ContentView()
     }
 }
