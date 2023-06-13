@@ -22,7 +22,10 @@ struct ContentView: View {
 
                                     Button(action: {
                                         // Delete action
-                                        listItems[key] = listItems[key]?.filter { $0 != item }
+                                        listItems[key]?.removeAll(where: { $0 == item })
+                                        if listItems[key]?.isEmpty ?? false {
+                                            listItems[key] = nil
+                                        }
                                     }) {
                                         Text("削除")
                                         Image(systemName: "trash")
@@ -69,7 +72,6 @@ struct ContentView: View {
         }
     }
 }
-
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
