@@ -9,7 +9,7 @@ struct ContentView: View {
         VStack {
             List {
                 ForEach(listItems.sorted(by: { $0.key < $1.key }), id: \.key) { key, items in
-                    Section(header: Text("List \((key))")) { // 日付を表示するためにフォーマット
+                    Section(header: Text("List \((key))")) {
                         ForEach(items, id: \.self) { item in
                             ListItemView(item: item) {
                                 handleEditItem(item)
@@ -46,6 +46,9 @@ struct ContentView: View {
             
             Spacer()
         }
+        .onAppear {
+            removePreviousLists()
+        }
     }
     
     private func handleEditItem(_ item: String) {
@@ -62,11 +65,36 @@ struct ContentView: View {
     private func registerItem() {
         var dayString = ""
         
-        if let slashIndex = textFieldInput.firstIndex(of: "/") {
-            let startIndex = textFieldInput.index(slashIndex, offsetBy: -2, limitedBy: textFieldInput.startIndex) ?? textFieldInput.startIndex
-            let endIndex = textFieldInput.index(slashIndex, offsetBy: 3, limitedBy: textFieldInput.endIndex) ?? textFieldInput.endIndex
-            let mString = String(textFieldInput[startIndex..<slashIndex])
-            var dString = String(textFieldInput[slashIndex..<endIndex])
+        let text = textFieldInput
+        var components = text.split(separator: " ")
+        
+        var firstComponent: String?
+        var lastComponent: String?
+
+        if let first = components.first.map(String.init), let last = components.last.map(String.init) {
+            firstComponent = first
+            lastComponent = last
+
+            // first and last elements
+            components = components.dropFirst().dropLast()
+
+            let remainingText = components.joined(separator: " ")
+            print("Remaining text: \(remainingText)")
+        } else {
+            print("The string is empty or only contains spaces.")
+        }
+
+        // firstComponentとlastComponentをスコープの外で使えるようにする
+        if let first = firstComponent, let last = lastComponent {
+            print("First component (outside the scope): \(first)")
+            print("Last component (outside the scope): \(last)")
+        }
+        
+        if let slashIndex = firstComponent?.firstIndex(of: "/") {
+            let startIndex = firstComponent?.index(slashIndex, offsetBy: -2, limitedBy: firstComponent!.startIndex) ?? firstComponent!.startIndex
+            let endIndex = firstComponent?.index(slashIndex, offsetBy: 3, limitedBy: firstComponent!.endIndex) ?? firstComponent!.endIndex
+            let mString = String(firstComponent![startIndex..<slashIndex])
+            var dString = String(firstComponent![slashIndex..<endIndex])
             dString.removeFirst()
             
             if mString.first == "0" {
@@ -100,18 +128,16 @@ struct ContentView: View {
                let targetMonth = targetComponents.month, let targetDay = targetComponents.day {
                 
                 if currentMonth > targetMonth || (currentMonth == targetMonth && currentDay > targetDay) {
-                    // 未来の年になるように設定
                     futureComponents.year = currentComponents.year! + 1
                 } else {
                     futureComponents.year = currentComponents.year
                 }
                 
+                
                 futureComponents.month = targetMonth
                 futureComponents.day = targetDay
                 
                 if let futureDate = currentCalendar.date(from: futureComponents) {
-                    // dayDateをDate型として使用できる
-                    // ここでlistItemsへのアクセスや操作を行う
                     listItems[futureDate, default: []].append(textFieldInput)
                     textFieldInput = ""
                 } else {
@@ -122,6 +148,16 @@ struct ContentView: View {
             }
         } else {
             print("日付の変換に失敗しました。")
+        }
+    }
+    
+    private func removePreviousLists() {
+        let currentDate = Date()
+        
+        for key in listItems.keys {
+            if key < currentDate {
+                listItems[key] = nil
+            }
         }
     }
 }
