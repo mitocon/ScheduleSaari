@@ -75,11 +75,11 @@ struct ContentView: View {
             firstComponent = first
             lastComponent = last
 
-            // first and last elements
             components = components.dropFirst().dropLast()
 
+            // 残りのText
             let remainingText = components.joined(separator: " ")
-            print("Remaining text: \(remainingText)")
+
         } else {
             print("The string is empty or only contains spaces.")
         }
