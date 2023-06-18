@@ -1,6 +1,13 @@
 import SwiftUI
 import Foundation
 
+struct ScheduledItem {
+    var contentText: String
+    var day: Date
+    var endTime: Date
+    var startTime: Date
+}
+
 struct ContentView: View {
     @State private var textFieldInput: String = ""
     @State private var listItems: [Date: [String]] = [:]
@@ -70,6 +77,7 @@ struct ContentView: View {
         
         var firstComponent: String?
         var lastComponent: String?
+        var timeComponent: String?
 
         if let first = components.first.map(String.init), let last = components.last.map(String.init) {
             firstComponent = first
@@ -79,6 +87,13 @@ struct ContentView: View {
 
             // 残りのText
             let remainingText = components.joined(separator: " ")
+            print("残りもの")
+            print(remainingText)
+            
+            if let firstOfRemaining = components.first.map(String.init) {
+                timeComponent = firstOfRemaining
+            }
+
 
         } else {
             print("The string is empty or only contains spaces.")
