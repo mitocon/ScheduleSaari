@@ -78,7 +78,9 @@ struct ContentView: View {
         var firstComponent: String?
         var lastComponent: String?
         var timeComponent: String?
-
+        
+        // 入力値をバリデーションする
+        ValidationHelper.validateComponents(text)
         if let first = components.first.map(String.init), let last = components.last.map(String.init) {
             firstComponent = first
             lastComponent = last

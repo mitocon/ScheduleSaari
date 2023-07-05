@@ -7,13 +7,31 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		084E39A02A55A86C005167B8 /* ScheduleSaariTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 084E399F2A55A86C005167B8 /* ScheduleSaariTests.swift */; };
+		084E39A72A55A8BE005167B8 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 084E39A62A55A8BE005167B8 /* XCTest.framework */; platformFilter = ios; };
 		085626232A357A2A00090E35 /* ScheduleSaariApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 085626222A357A2A00090E35 /* ScheduleSaariApp.swift */; };
 		085626252A357A2A00090E35 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 085626242A357A2A00090E35 /* ContentView.swift */; };
 		085626272A357A2B00090E35 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 085626262A357A2B00090E35 /* Assets.xcassets */; };
 		0856262B2A357A2B00090E35 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0856262A2A357A2B00090E35 /* Preview Assets.xcassets */; };
+		086AD0E82A55A2C8003F3359 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 085626322A35AF9F00090E35 /* UIKit.framework */; };
+		08ECD8992A3B282100E7B1B6 /* ScheduledItem.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 08ECD8972A3B282100E7B1B6 /* ScheduledItem.xcdatamodeld */; };
+		08ECD8BD2A3F63D900E7B1B6 /* ValidationHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08ECD8BC2A3F63D900E7B1B6 /* ValidationHelper.swift */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		084E39A12A55A86C005167B8 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 085626172A357A2A00090E35 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 0856261E2A357A2A00090E35;
+			remoteInfo = ScheduleSaari;
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXFileReference section */
+		084E399D2A55A86B005167B8 /* ScheduleSaariTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ScheduleSaariTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		084E399F2A55A86C005167B8 /* ScheduleSaariTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleSaariTests.swift; sourceTree = "<group>"; };
+		084E39A62A55A8BE005167B8 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Platforms/iPhoneOS.platform/Developer/Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		0856261F2A357A2A00090E35 /* ScheduleSaari.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ScheduleSaari.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		085626222A357A2A00090E35 /* ScheduleSaariApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleSaariApp.swift; sourceTree = "<group>"; };
 		085626242A357A2A00090E35 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -21,23 +39,47 @@
 		085626282A357A2B00090E35 /* ScheduleSaari.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = ScheduleSaari.entitlements; sourceTree = "<group>"; };
 		0856262A2A357A2B00090E35 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		085626322A35AF9F00090E35 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS16.4.sdk/System/Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
+		08ECD8982A3B282100E7B1B6 /* Schedule.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Schedule.xcdatamodel; sourceTree = "<group>"; };
+		08ECD8BC2A3F63D900E7B1B6 /* ValidationHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValidationHelper.swift; sourceTree = "<group>"; };
+		08ECD8BE2A51BED000E7B1B6 /* 仕様書.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = "仕様書.md"; sourceTree = "<group>"; };
+		08ECD8C22A55939600E7B1B6 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Platforms/MacOSX.platform/Developer/Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		084E399A2A55A86B005167B8 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				084E39A72A55A8BE005167B8 /* XCTest.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		0856261C2A357A2A00090E35 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				086AD0E82A55A2C8003F3359 /* UIKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		084E399E2A55A86C005167B8 /* ScheduleSaariTests */ = {
+			isa = PBXGroup;
+			children = (
+				084E399F2A55A86C005167B8 /* ScheduleSaariTests.swift */,
+			);
+			path = ScheduleSaariTests;
+			sourceTree = "<group>";
+		};
 		085626162A357A2A00090E35 = {
 			isa = PBXGroup;
 			children = (
+				08ECD8972A3B282100E7B1B6 /* ScheduledItem.xcdatamodeld */,
+				08ECD8BE2A51BED000E7B1B6 /* 仕様書.md */,
 				085626212A357A2A00090E35 /* ScheduleSaari */,
+				084E399E2A55A86C005167B8 /* ScheduleSaariTests */,
 				085626202A357A2A00090E35 /* Products */,
 				085626312A35AF9E00090E35 /* Frameworks */,
 			);
@@ -47,6 +89,7 @@
 			isa = PBXGroup;
 			children = (
 				0856261F2A357A2A00090E35 /* ScheduleSaari.app */,
+				084E399D2A55A86B005167B8 /* ScheduleSaariTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -59,6 +102,7 @@
 				085626262A357A2B00090E35 /* Assets.xcassets */,
 				085626282A357A2B00090E35 /* ScheduleSaari.entitlements */,
 				085626292A357A2B00090E35 /* Preview Content */,
+				08ECD8BC2A3F63D900E7B1B6 /* ValidationHelper.swift */,
 			);
 			path = ScheduleSaari;
 			sourceTree = "<group>";
@@ -74,6 +118,8 @@
 		085626312A35AF9E00090E35 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				08ECD8C22A55939600E7B1B6 /* XCTest.framework */,
+				084E39A62A55A8BE005167B8 /* XCTest.framework */,
 				085626322A35AF9F00090E35 /* UIKit.framework */,
 			);
 			name = Frameworks;
@@ -82,6 +128,24 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		084E399C2A55A86B005167B8 /* ScheduleSaariTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 084E39A32A55A86C005167B8 /* Build configuration list for PBXNativeTarget "ScheduleSaariTests" */;
+			buildPhases = (
+				084E39992A55A86B005167B8 /* Sources */,
+				084E399A2A55A86B005167B8 /* Frameworks */,
+				084E399B2A55A86B005167B8 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				084E39A22A55A86C005167B8 /* PBXTargetDependency */,
+			);
+			name = ScheduleSaariTests;
+			productName = ScheduleSaariTests;
+			productReference = 084E399D2A55A86B005167B8 /* ScheduleSaariTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 		0856261E2A357A2A00090E35 /* ScheduleSaari */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 0856262E2A357A2B00090E35 /* Build configuration list for PBXNativeTarget "ScheduleSaari" */;
@@ -109,6 +173,10 @@
 				LastSwiftUpdateCheck = 1430;
 				LastUpgradeCheck = 1430;
 				TargetAttributes = {
+					084E399C2A55A86B005167B8 = {
+						CreatedOnToolsVersion = 14.3.1;
+						TestTargetID = 0856261E2A357A2A00090E35;
+					};
 					0856261E2A357A2A00090E35 = {
 						CreatedOnToolsVersion = 14.3.1;
 					};
@@ -129,11 +197,19 @@
 			projectRoot = "";
 			targets = (
 				0856261E2A357A2A00090E35 /* ScheduleSaari */,
+				084E399C2A55A86B005167B8 /* ScheduleSaariTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		084E399B2A55A86B005167B8 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		0856261D2A357A2A00090E35 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -146,18 +222,73 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		084E39992A55A86B005167B8 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				084E39A02A55A86C005167B8 /* ScheduleSaariTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		0856261B2A357A2A00090E35 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				08ECD8BD2A3F63D900E7B1B6 /* ValidationHelper.swift in Sources */,
 				085626252A357A2A00090E35 /* ContentView.swift in Sources */,
+				08ECD8992A3B282100E7B1B6 /* ScheduledItem.xcdatamodeld in Sources */,
 				085626232A357A2A00090E35 /* ScheduleSaariApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
+/* Begin PBXTargetDependency section */
+		084E39A22A55A86C005167B8 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 0856261E2A357A2A00090E35 /* ScheduleSaari */;
+			targetProxy = 084E39A12A55A86C005167B8 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
 /* Begin XCBuildConfiguration section */
+		084E39A42A55A86C005167B8 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = mitocon.ScheduleSaariTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ScheduleSaari.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/ScheduleSaari";
+			};
+			name = Debug;
+		};
+		084E39A52A55A86C005167B8 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = mitocon.ScheduleSaariTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ScheduleSaari.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/ScheduleSaari";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
 		0856262C2A357A2B00090E35 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -346,6 +477,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		084E39A32A55A86C005167B8 /* Build configuration list for PBXNativeTarget "ScheduleSaariTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				084E39A42A55A86C005167B8 /* Debug */,
+				084E39A52A55A86C005167B8 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		0856261A2A357A2A00090E35 /* Build configuration list for PBXProject "ScheduleSaari" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
@@ -365,6 +505,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		08ECD8972A3B282100E7B1B6 /* ScheduledItem.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				08ECD8982A3B282100E7B1B6 /* Schedule.xcdatamodel */,
+			);
+			currentVersion = 08ECD8982A3B282100E7B1B6 /* Schedule.xcdatamodel */;
+			path = ScheduledItem.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 085626172A357A2A00090E35 /* Project object */;
 }

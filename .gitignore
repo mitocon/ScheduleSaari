@@ -24,3 +24,5 @@ Pods/*
 !.gitkeep
 .DS_Store
 
+ScheduleSaariTestPlan.xctestplan
+ScheduleSaari.xcodeproj/xcshareddata

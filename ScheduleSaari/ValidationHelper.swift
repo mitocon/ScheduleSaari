@@ -74,7 +74,7 @@ class ValidationHelper {
             }
         default:
             // 上記のいずれの条件にも一致しない場合の処理
-            print("Invalid components count")
+            print("登録内容が多すぎます")
             // ここに処理を追加
         }
     }
